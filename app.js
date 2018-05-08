@@ -1,0 +1,66 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    var plansza = document.querySelector('.plansza');
+
+    var timer = setInterval(function () {
+        var zombie = document.createElement('div');
+        zombie.classList.add('zombie');
+        
+
+        //Skala
+        var scale = 0.8 + Math.random() * 0.5;
+        zombie.style.transform = "scale("+scale+")";
+
+        //blur
+        if (bottomPos > 200) {
+            zombie.style.filter = "blur(2px)"
+        } else if (bottomPos > 100) {
+            zombie.style.filter = "blur(1px)"
+        } else {
+
+        }
+
+
+        var min = 10;
+        var max = 360;
+        var bottomPos = Math.floor(Math.random()*(max-min+1)+min);
+    
+        zombie.style.bottom = bottomPos + 'px';
+
+        zombie.style.zIndex = 360 - bottomPos;
+
+        //szybkość poruszania
+        var min = 10;
+        var max = 20;
+        var walkSpeed = Math.floor(Math.random()*(max-min+1)+min);
+        var anim = "0.5s,"+walkSpeed+"s"
+        zombie.style.animationDuration = anim;
+
+        //zycie
+        zombie.live = 2;
+
+        plansza.appendChild(zombie); //tworzymy i dodajemy na planszę
+
+        zombie.addEventListener('animationend', function(e) {
+            if(e.animationName === "zombieWalk") {
+                this.remove();
+            }
+
+        });
+
+    }, 500);
+
+
+    plansza.addEventListener('click', function(e) {
+        if (e.target.classList.contains ('zombie')) {
+            e.target.live--;
+            if(e.target.live <= 0 ) {
+                e.target.remove();
+            }
+            
+        }
+
+
+    });
+
+})
