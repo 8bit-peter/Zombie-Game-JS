@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    var score = 0;
+    var scoreValue = document.querySelector('.score span');
+
     var plansza = document.querySelector('.plansza');
 
     var timer = setInterval(function () {
@@ -7,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         zombie.classList.add('zombie');
         
 
-        //Skala
+        //Scale
         var scale = 0.8 + Math.random() * 0.5;
         zombie.style.transform = "scale("+scale+")";
 
@@ -29,22 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         zombie.style.zIndex = 360 - bottomPos;
 
-        //szybkość poruszania
+        //movement speed
         var min = 10;
         var max = 20;
         var walkSpeed = Math.floor(Math.random()*(max-min+1)+min);
         var anim = "0.5s,"+walkSpeed+"s"
         zombie.style.animationDuration = anim;
 
-        //zycie
+        //zombie life
         zombie.live = 2;
 
-        plansza.appendChild(zombie); //tworzymy i dodajemy na planszę
+        plansza.appendChild(zombie);
 
         zombie.addEventListener('animationend', function(e) {
             if(e.animationName === "zombieWalk") {
+                score -= 10;
                 this.remove();
             }
+
+            scoreValue.innerText = score;
 
         });
 
@@ -55,8 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains ('zombie')) {
             e.target.live--;
             if(e.target.live <= 0 ) {
+                score += 10;
                 e.target.remove();
             }
+
+            scoreValue.innerText = score;
             
         }
 
