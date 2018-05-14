@@ -4,6 +4,6 @@ Simple "game" created with HTML, CSS and JS. Animation was created using followi
 
 Use your mouse and "shoot" the zombie - you have to hit one twice to delete it from the screen.
 
-LIVE PREVIEW
+ # Live Preview
 
 You can view the game by following this link: https://8bit-peter.github.io/Zombie-Game-JS/
