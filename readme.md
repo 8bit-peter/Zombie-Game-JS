@@ -1,3 +1,4 @@
+🧟‍♂️ Zombie Gmae🧟‍♀️
 Simple "game" created with HTML, CSS and JS. Animation was created using following sprite:
 
 ![Zombie](http://www.wdrfree.com/public/demos/animatespritekeyframes/walkingdead.png)
