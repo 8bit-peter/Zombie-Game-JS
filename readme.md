@@ -10,10 +10,10 @@ Use your mouse and "shoot" the zombie - you have to hit one twice to delete it f
  # ▶ Live Preview
 Click On Image To Play Live Game Or Click On Game 
 
-[![CarDEalerShip](https://raw.githubusercontent.com/ashishsiot/Zombie-Game-JS/master/homescreen.png)](https://8bit-peter.github.io/Zombie-Game-JS/)
+[![CarDEalerShip](https://raw.githubusercontent.com/ashishsiot/Zombie-Game-JS/master/homescreen.png)](https://ashishsiot.github.io/Zombie-Game-JS/)
 
 
-[Click Here](https://8bit-peter.github.io/Zombie-Game-JS/)
+[Click Here](https://ashishsiot.github.io/Zombie-Game-JS/)
 
 
 # 🛠 Build Using
