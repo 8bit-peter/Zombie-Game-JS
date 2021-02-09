@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             scoreValue.innerText = score;
 
-        });
+        }); if (score == -20 ){
+            alert("you lost the game ");location.reload();
+        }
 
     }, 500);
 
